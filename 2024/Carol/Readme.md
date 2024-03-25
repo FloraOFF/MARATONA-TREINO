@@ -1,0 +1,1 @@
+Pasta de resolução de problemas sobre programação competitiva da Carol.
