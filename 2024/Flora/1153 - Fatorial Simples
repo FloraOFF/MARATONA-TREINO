@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <map>
+#include <sstream>
+
+using namespace std;
+
+int fatorial (int n1) {
+  if (n1 == 0) return 1;
+  else {
+    return n1 * fatorial(n1 - 1);
+  }
+}
+
+int main() {
+  int n1;
+
+  cin >> n1;
+
+  int fat = fatorial(n1);
+
+  cout << fat << endl;
+
+  return 0;
+}

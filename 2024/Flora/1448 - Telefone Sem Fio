@@ -1,0 +1,59 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cctype>
+#include <map>
+
+using namespace std;
+
+int main() {
+  int n;
+
+  cin >> n;
+  cin.ignore();
+
+  for(int i = 0; i < n; i++) {
+    string fraseReal = "", time1 = "", time2 = "";
+    
+    getline(cin, fraseReal);
+    getline(cin, time1);
+    getline(cin, time2);
+
+    int qtd1 = 0, qtd2 = 0;
+
+    cout << "Instancia " << i+1 << endl;
+
+    for(int j = 0; j < fraseReal.size(); j++) {
+        if (time1[j] == fraseReal[j]) qtd1++;
+    }
+
+    for(int j = 0; j < fraseReal.size(); j++) {
+        if (time2[j] == fraseReal[j]) qtd2++;
+    }
+
+    bool empate;
+
+    if (qtd1 > qtd2) cout << "time 1" << endl;
+    else if (qtd1 < qtd2) cout << "time 2" << endl;
+    else if (qtd1 == qtd2) {
+      empate = true;
+      for(int i = 0; i < fraseReal.size(); i++) {
+        if (time1[i] == fraseReal[i] && time2[i] != fraseReal[i]) {
+          empate = false;
+          cout << "time 1" << endl;
+          break;
+        } else if (time2[i] == fraseReal[i] && time1[i] != fraseReal[i]) {
+          empate = false;
+          cout << "time 2" << endl;
+          break;
+        }
+      }
+
+      if (empate) cout << "empate" << endl;
+    }
+
+
+    cout << endl;
+  }
+}
